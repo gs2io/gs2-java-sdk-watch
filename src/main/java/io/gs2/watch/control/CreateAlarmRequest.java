@@ -10,10 +10,10 @@ import io.gs2.watch.Gs2Watch;
  *
  */
 @SuppressWarnings("serial")
-public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
+public class CreateAlarmRequest extends Gs2BasicRequest<CreateAlarmRequest> {
 
 	public static class Constant extends Gs2Watch.Constant {
-		public static final String FUNCTION = "CreateAlerm";
+		public static final String FUNCTION = "CreateAlarm";
 	}
 	
 	/** アラーム名 */
@@ -57,7 +57,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param name アラーム名
 	 * @return this
 	 */
-	public CreateAlermRequest withName(String name) {
+	public CreateAlarmRequest withName(String name) {
 		setName(name);
 		return this;
 	}
@@ -86,7 +86,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param description 説明文
 	 * @return this
 	 */
-	public CreateAlermRequest withDescription(String description) {
+	public CreateAlarmRequest withDescription(String description) {
 		setDescription(description);
 		return this;
 	}
@@ -115,7 +115,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param service サービス
 	 * @return this
 	 */
-	public CreateAlermRequest withService(String service) {
+	public CreateAlarmRequest withService(String service) {
 		setService(service);
 		return this;
 	}
@@ -144,7 +144,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param serviceId サービス
 	 * @return this
 	 */
-	public CreateAlermRequest withServiceId(String serviceId) {
+	public CreateAlarmRequest withServiceId(String serviceId) {
 		setServiceId(serviceId);
 		return this;
 	}
@@ -173,7 +173,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param operation オペレーション
 	 * @return this
 	 */
-	public CreateAlermRequest withOperation(String operation) {
+	public CreateAlarmRequest withOperation(String operation) {
 		setOperation(operation);
 		return this;
 	}
@@ -202,7 +202,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param expression 演算子
 	 * @return this
 	 */
-	public CreateAlermRequest withExpression(String expression) {
+	public CreateAlarmRequest withExpression(String expression) {
 		setExpression(expression);
 		return this;
 	}
@@ -231,7 +231,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param threshold 閾値
 	 * @return this
 	 */
-	public CreateAlermRequest withThreshold(Integer threshold) {
+	public CreateAlarmRequest withThreshold(Integer threshold) {
 		setThreshold(threshold);
 		return this;
 	}
@@ -260,7 +260,7 @@ public class CreateAlermRequest extends Gs2BasicRequest<CreateAlermRequest> {
 	 * @param notificationId 通知ID
 	 * @return this
 	 */
-	public CreateAlermRequest withNotificationId(String notificationId) {
+	public CreateAlarmRequest withNotificationId(String notificationId) {
 		setNotificationId(notificationId);
 		return this;
 	}

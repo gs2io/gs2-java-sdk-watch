@@ -17,23 +17,23 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.gs2.AbstractGs2Client;
 import io.gs2.Gs2Constant;
 import io.gs2.model.IGs2Credential;
-import io.gs2.watch.control.CreateAlermRequest;
-import io.gs2.watch.control.CreateAlermResult;
-import io.gs2.watch.control.DeleteAlermRequest;
-import io.gs2.watch.control.DescribeAlermEventRequest;
-import io.gs2.watch.control.DescribeAlermEventResult;
-import io.gs2.watch.control.DescribeAlermRequest;
-import io.gs2.watch.control.DescribeAlermResult;
+import io.gs2.watch.control.CreateAlarmRequest;
+import io.gs2.watch.control.CreateAlarmResult;
+import io.gs2.watch.control.DeleteAlarmRequest;
+import io.gs2.watch.control.DescribeAlarmEventRequest;
+import io.gs2.watch.control.DescribeAlarmEventResult;
+import io.gs2.watch.control.DescribeAlarmRequest;
+import io.gs2.watch.control.DescribeAlarmResult;
 import io.gs2.watch.control.DescribeOperationRequest;
 import io.gs2.watch.control.DescribeOperationResult;
 import io.gs2.watch.control.DescribeServiceRequest;
 import io.gs2.watch.control.DescribeServiceResult;
-import io.gs2.watch.control.GetAlermRequest;
-import io.gs2.watch.control.GetAlermResult;
+import io.gs2.watch.control.GetAlarmRequest;
+import io.gs2.watch.control.GetAlarmResult;
 import io.gs2.watch.control.GetMetricRequest;
 import io.gs2.watch.control.GetMetricResult;
-import io.gs2.watch.control.UpdateAlermRequest;
-import io.gs2.watch.control.UpdateAlermResult;
+import io.gs2.watch.control.UpdateAlarmRequest;
+import io.gs2.watch.control.UpdateAlarmResult;
 
 /**
  * GS2 Timer API クライアント
@@ -63,7 +63,7 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * @param request リクエストパラメータ
 	 * @return 作成結果
 	 */
-	public CreateAlermResult createAlerm(CreateAlermRequest request) {
+	public CreateAlarmResult createAlarm(CreateAlarmRequest request) {
 		ObjectNode body = JsonNodeFactory.instance.objectNode()
 				.put("name", request.getName())
 				.put("description", request.getDescription())
@@ -74,13 +74,13 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 				.put("threshold", request.getThreshold())
 				.put("notificationId", request.getNotificationId());
 		HttpPost post = createHttpPost(
-				Gs2Constant.ENDPOINT_HOST + "/alerm", 
+				Gs2Constant.ENDPOINT_HOST + "/alarm", 
 				credential, 
 				ENDPOINT,
-				CreateAlermRequest.Constant.MODULE, 
-				CreateAlermRequest.Constant.FUNCTION,
+				CreateAlarmRequest.Constant.MODULE, 
+				CreateAlarmRequest.Constant.FUNCTION,
 				body.toString());
-		return doRequest(post, CreateAlermResult.class);
+		return doRequest(post, CreateAlarmResult.class);
 	}
 	
 	/**
@@ -89,8 +89,8 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * @param request リクエストパラメータ
 	 * @return アラーム一覧
 	 */
-	public DescribeAlermResult describeAlerm(DescribeAlermRequest request) {
-		String url = Gs2Constant.ENDPOINT_HOST + "/alerm";
+	public DescribeAlarmResult describeAlarm(DescribeAlarmRequest request) {
+		String url = Gs2Constant.ENDPOINT_HOST + "/alarm";
 		List<NameValuePair> queryString = new ArrayList<>();
 		if(request.getLimit() != null) queryString.add(new BasicNameValuePair("limit", String.valueOf(request.getLimit())));
 		if(request.getPageToken() != null) queryString.add(new BasicNameValuePair("pageToken", request.getPageToken()));
@@ -101,9 +101,9 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 				url, 
 				credential, 
 				ENDPOINT,
-				DescribeAlermRequest.Constant.MODULE, 
-				DescribeAlermRequest.Constant.FUNCTION);
-		return doRequest(get, DescribeAlermResult.class);
+				DescribeAlarmRequest.Constant.MODULE, 
+				DescribeAlarmRequest.Constant.FUNCTION);
+		return doRequest(get, DescribeAlarmResult.class);
 	}
 
 	/**
@@ -112,14 +112,14 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * @param request リクエストパラメータ
 	 * @return アラーム
 	 */
-	public GetAlermResult getAlerm(GetAlermRequest request) {
+	public GetAlarmResult getAlarm(GetAlarmRequest request) {
 		HttpGet get = createHttpGet(
-				Gs2Constant.ENDPOINT_HOST + "/alerm/" + request.getAlermName(), 
+				Gs2Constant.ENDPOINT_HOST + "/alarm/" + request.getAlarmName(), 
 				credential, 
 				ENDPOINT,
-				GetAlermRequest.Constant.MODULE, 
-				GetAlermRequest.Constant.FUNCTION);
-		return doRequest(get, GetAlermResult.class);
+				GetAlarmRequest.Constant.MODULE, 
+				GetAlarmRequest.Constant.FUNCTION);
+		return doRequest(get, GetAlarmResult.class);
 	}
 
 	/**
@@ -128,20 +128,20 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * @param request リクエストパラメータ
 	 * @return 更新結果
 	 */
-	public UpdateAlermResult updateAlerm(UpdateAlermRequest request) {
+	public UpdateAlarmResult updateAlarm(UpdateAlarmRequest request) {
 		ObjectNode body = JsonNodeFactory.instance.objectNode()
 				.put("description", request.getDescription())
 				.put("expression", request.getExpression())
 				.put("threshold", request.getThreshold())
 				.put("notificationId", request.getNotificationId());
 		HttpPut put = createHttpPut(
-				Gs2Constant.ENDPOINT_HOST + "/alerm/" + request.getAlermName(), 
+				Gs2Constant.ENDPOINT_HOST + "/alarm/" + request.getAlarmName(), 
 				credential, 
 				ENDPOINT,
-				UpdateAlermRequest.Constant.MODULE, 
-				UpdateAlermRequest.Constant.FUNCTION,
+				UpdateAlarmRequest.Constant.MODULE, 
+				UpdateAlarmRequest.Constant.FUNCTION,
 				body.toString());
-		return doRequest(put, UpdateAlermResult.class);
+		return doRequest(put, UpdateAlarmResult.class);
 	}
 
 	/**
@@ -149,13 +149,13 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * 
 	 * @param request リクエストパラメータ
 	 */
-	public void deleteAlerm(DeleteAlermRequest request) {
+	public void deleteAlarm(DeleteAlarmRequest request) {
 		HttpDelete delete = createHttpDelete(
-				Gs2Constant.ENDPOINT_HOST + "/alerm/" + request.getAlermName(), 
+				Gs2Constant.ENDPOINT_HOST + "/alarm/" + request.getAlarmName(), 
 				credential, 
 				ENDPOINT,
-				DeleteAlermRequest.Constant.MODULE, 
-				DeleteAlermRequest.Constant.FUNCTION);
+				DeleteAlarmRequest.Constant.MODULE, 
+				DeleteAlarmRequest.Constant.FUNCTION);
 		doRequest(delete, null);
 	}
 
@@ -167,8 +167,8 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 	 * @param request リクエストパラメータ
 	 * @return アラームイベント一覧
 	 */
-	public DescribeAlermEventResult describeAlermEvent(DescribeAlermEventRequest request) {
-		String url = Gs2Constant.ENDPOINT_HOST + "/alerm/" + request.getAlermName() + "/event";
+	public DescribeAlarmEventResult describeAlarmEvent(DescribeAlarmEventRequest request) {
+		String url = Gs2Constant.ENDPOINT_HOST + "/alarm/" + request.getAlarmName() + "/event";
 		List<NameValuePair> queryString = new ArrayList<>();
 		if(request.getLimit() != null) queryString.add(new BasicNameValuePair("limit", String.valueOf(request.getLimit())));
 		if(request.getPageToken() != null) queryString.add(new BasicNameValuePair("pageToken", request.getPageToken()));
@@ -179,9 +179,9 @@ public class Gs2WatchClient extends AbstractGs2Client<Gs2WatchClient> {
 				url, 
 				credential, 
 				ENDPOINT,
-				DescribeAlermEventRequest.Constant.MODULE, 
-				DescribeAlermEventRequest.Constant.FUNCTION);
-		return doRequest(get, DescribeAlermEventResult.class);
+				DescribeAlarmEventRequest.Constant.MODULE, 
+				DescribeAlarmEventRequest.Constant.FUNCTION);
+		return doRequest(get, DescribeAlarmEventResult.class);
 	}
 
 	/**

@@ -10,17 +10,48 @@ import io.gs2.watch.Gs2Watch;
  *
  */
 @SuppressWarnings("serial")
-public class DescribeAlermRequest extends Gs2BasicRequest<DescribeAlermRequest> {
+public class DescribeAlarmEventRequest extends Gs2BasicRequest<DescribeAlarmEventRequest> {
 
 	public static class Constant extends Gs2Watch.Constant {
-		public static final String FUNCTION = "DescribeAlerm";
+		public static final String FUNCTION = "DescribeAlarmEvent";
 	}
-	
+
+	/** アラーム名 */
+	String alarmName;
 	/** 取得開始位置トークン */
 	String pageToken;
 	/** 取得件数 */
 	Integer limit;
 
+	/**
+	 * アラーム名を取得。
+	 * 
+	 * @return アラーム名
+	 */
+	public String getAlarmName() {
+		return alarmName;
+	}
+	
+	/**
+	 * アラーム名を設定。
+	 * 
+	 * @param alarmName アラーム名
+	 */
+	public void setAlarmName(String alarmName) {
+		this.alarmName = alarmName;
+	}
+	
+	/**
+	 * アラーム名を設定。
+	 * 
+	 * @param alarmName アラーム名
+	 * @return this
+	 */
+	public DescribeAlarmEventRequest withAlarmName(String alarmName) {
+		setAlarmName(alarmName);
+		return this;
+	}
+	
 	/**
 	 * 取得開始位置トークンを取得。
 	 * 
@@ -45,7 +76,7 @@ public class DescribeAlermRequest extends Gs2BasicRequest<DescribeAlermRequest> 
 	 * @param pageToken 取得開始位置トークン
 	 * @return this
 	 */
-	public DescribeAlermRequest withPageToken(String pageToken) {
+	public DescribeAlarmEventRequest withPageToken(String pageToken) {
 		setPageToken(pageToken);
 		return this;
 	}
@@ -74,7 +105,7 @@ public class DescribeAlermRequest extends Gs2BasicRequest<DescribeAlermRequest> 
 	 * @param limit 取得件数
 	 * @return this
 	 */
-	public DescribeAlermRequest withLimit(Integer limit) {
+	public DescribeAlarmEventRequest withLimit(Integer limit) {
 		setLimit(limit);
 		return this;
 	}

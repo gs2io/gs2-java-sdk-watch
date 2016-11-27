@@ -2,7 +2,7 @@ package io.gs2.watch.control;
 
 import java.util.List;
 
-import io.gs2.watch.model.AlermEvent;
+import io.gs2.watch.model.AlarmEvent;
 
 /**
  * イベント一覧取得結果。
@@ -10,10 +10,10 @@ import io.gs2.watch.model.AlermEvent;
  * @author Game Server Services, Inc.
  *
  */
-public class DescribeAlermEventResult {
+public class DescribeAlarmEventResult {
 
 	/** イベント一覧 */
-	List<AlermEvent> items;
+	List<AlarmEvent> items;
 	/** 次のページを取得するためのトークン */
 	String nextPageToken;
 	
@@ -34,7 +34,7 @@ public class DescribeAlermEventResult {
 	 * 
 	 * @return イベント一覧
 	 */
-	public List<AlermEvent> getItems() {
+	public List<AlarmEvent> getItems() {
 		return items;
 	}
 	
@@ -43,14 +43,14 @@ public class DescribeAlermEventResult {
 	 * 
 	 * @param items イベント一覧
 	 */
-	public void setItems(List<AlermEvent> items) {
+	public void setItems(List<AlarmEvent> items) {
 		this.items = items;
 	}
 	
 	/**
 	 * 次のページを取得するためのトークンを取得。
 	 * 
-	 * {@link DescribeAlermRequest} に指定することで、次のページを取得できます。
+	 * {@link DescribeAlarmRequest} に指定することで、次のページを取得できます。
 	 * 
 	 * @return トークン
 	 */

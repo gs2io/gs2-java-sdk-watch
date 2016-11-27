@@ -10,14 +10,14 @@ import io.gs2.watch.Gs2Watch;
  *
  */
 @SuppressWarnings("serial")
-public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
+public class UpdateAlarmRequest extends Gs2BasicRequest<UpdateAlarmRequest> {
 
 	public static class Constant extends Gs2Watch.Constant {
-		public static final String FUNCTION = "UpdateAlerm";
+		public static final String FUNCTION = "UpdateAlarm";
 	}
 
 	/** アラーム名 */
-	String alermName;
+	String alarmName;
 	/** 説明文 */
 	String description;
 	/** 演算子 */
@@ -32,27 +32,27 @@ public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
 	 * 
 	 * @return アラーム名
 	 */
-	public String getAlermName() {
-		return alermName;
+	public String getAlarmName() {
+		return alarmName;
 	}
 	
 	/**
 	 * アラーム名を設定。
 	 * 
-	 * @param alermName アラーム名
+	 * @param alarmName アラーム名
 	 */
-	public void setAlermName(String alermName) {
-		this.alermName = alermName;
+	public void setAlarmName(String alarmName) {
+		this.alarmName = alarmName;
 	}
 	
 	/**
 	 * アラーム名を設定。
 	 * 
-	 * @param alermName アラーム名
+	 * @param alarmName アラーム名
 	 * @return this
 	 */
-	public UpdateAlermRequest withAlermName(String alermName) {
-		setAlermName(alermName);
+	public UpdateAlarmRequest withAlarmName(String alarmName) {
+		setAlarmName(alarmName);
 		return this;
 	}
 	
@@ -80,7 +80,7 @@ public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
 	 * @param description 説明文
 	 * @return this
 	 */
-	public UpdateAlermRequest withDescription(String description) {
+	public UpdateAlarmRequest withDescription(String description) {
 		setDescription(description);
 		return this;
 	}
@@ -109,7 +109,7 @@ public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
 	 * @param expression 演算子
 	 * @return this
 	 */
-	public UpdateAlermRequest withExpression(String expression) {
+	public UpdateAlarmRequest withExpression(String expression) {
 		setExpression(expression);
 		return this;
 	}
@@ -138,7 +138,7 @@ public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
 	 * @param threshold 閾値
 	 * @return this
 	 */
-	public UpdateAlermRequest withThreshold(Integer threshold) {
+	public UpdateAlarmRequest withThreshold(Integer threshold) {
 		setThreshold(threshold);
 		return this;
 	}
@@ -167,7 +167,7 @@ public class UpdateAlermRequest extends Gs2BasicRequest<UpdateAlermRequest> {
 	 * @param notificationId 通知ID
 	 * @return this
 	 */
-	public UpdateAlermRequest withNotificationId(String notificationId) {
+	public UpdateAlarmRequest withNotificationId(String notificationId) {
 		setNotificationId(notificationId);
 		return this;
 	}

@@ -1,23 +1,23 @@
 package io.gs2.watch.control;
 
-import io.gs2.watch.model.Alerm;
+import io.gs2.watch.model.Alarm;
 
 /**
- * アラームの更新結果。
+ * アラームの作成結果。
  * 
  * @author Game Server Services, Inc.
  *
  */
-public class UpdateAlermResult {
+public class CreateAlarmResult {
 	
-	Alerm item;
+	Alarm item;
 	
 	/**
 	 * アラームを取得。
 	 * 
 	 * @return アラーム
 	 */
-	public Alerm getItem() {
+	public Alarm getItem() {
 		return item;
 	}
 	
@@ -26,7 +26,7 @@ public class UpdateAlermResult {
 	 * 
 	 * @param item アラーム
 	 */
-	public void setItem(Alerm item) {
+	public void setItem(Alarm item) {
 		this.item = item;
 	}
 	
@@ -36,7 +36,7 @@ public class UpdateAlermResult {
 	 * @param item アラーム
 	 * @return this
 	 */
-	public UpdateAlermResult withItem(Alerm item) {
+	public CreateAlarmResult withItem(Alarm item) {
 		setItem(item);
 		return this;
 	}

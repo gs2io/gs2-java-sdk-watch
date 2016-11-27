@@ -10,41 +10,41 @@ import io.gs2.watch.Gs2Watch;
  *
  */
 @SuppressWarnings("serial")
-public class GetAlermRequest extends Gs2BasicRequest<GetAlermRequest> {
+public class GetAlarmRequest extends Gs2BasicRequest<GetAlarmRequest> {
 
 	public static class Constant extends Gs2Watch.Constant {
-		public static final String FUNCTION = "GetAlerm";
+		public static final String FUNCTION = "GetAlarm";
 	}
 	
 	/** アラーム名 */
-	String alermName;
+	String alarmName;
 	
 	/**
 	 * アラーム名を取得。
 	 * 
 	 * @return アラーム名
 	 */
-	public String getAlermName() {
-		return alermName;
+	public String getAlarmName() {
+		return alarmName;
 	}
 	
 	/**
 	 * アラーム名を設定。
 	 * 
-	 * @param alermName アラーム名
+	 * @param alarmName アラーム名
 	 */
-	public void setAlermName(String alermName) {
-		this.alermName = alermName;
+	public void setAlarmName(String alarmName) {
+		this.alarmName = alarmName;
 	}
 	
 	/**
 	 * アラーム名を設定。
 	 * 
-	 * @param alermName アラーム名
+	 * @param alarmName アラーム名
 	 * @return this
 	 */
-	public GetAlermRequest withAlermName(String alermName) {
-		setAlermName(alermName);
+	public GetAlarmRequest withAlarmName(String alarmName) {
+		setAlarmName(alarmName);
 		return this;
 	}
 }

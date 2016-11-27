@@ -1,6 +1,6 @@
 package io.gs2.watch.control;
 
-import io.gs2.watch.model.Alerm;
+import io.gs2.watch.model.Alarm;
 
 /**
  * アラーム取得結果。
@@ -8,17 +8,17 @@ import io.gs2.watch.model.Alerm;
  * @author Game Server Services, Inc.
  *
  */
-public class GetAlermResult {
+public class GetAlarmResult {
 
 	/** アラーム */
-	Alerm item;
+	Alarm item;
 	
 	/**
 	 * 取得したアラームを取得。
 	 * 
 	 * @return アラーム
 	 */
-	public Alerm getItem() {
+	public Alarm getItem() {
 		return item;
 	}
 	
@@ -27,7 +27,7 @@ public class GetAlermResult {
 	 * 
 	 * @param item アラーム
 	 */
-	public void setItem(Alerm item) {
+	public void setItem(Alarm item) {
 		this.item = item;
 	}
 }

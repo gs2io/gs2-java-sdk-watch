@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class Alerm implements Serializable {
+public class Alarm implements Serializable {
 
 	/** アラームID */
-	String alermId;
+	String alarmId;
 	/** オーナーID */
 	String ownerId;
 	/** アラーム名 */
@@ -48,17 +48,17 @@ public class Alerm implements Serializable {
 	 * 
 	 * @return アラームID
 	 */
-	public String getAlermId() {
-		return alermId;
+	public String getAlarmId() {
+		return alarmId;
 	}
 	
 	/**
 	 * アラームIDを設定
 	 * 
-	 * @param alermId アラームID
+	 * @param alarmId アラームID
 	 */
-	public void setAlermId(String alermId) {
-		this.alermId = alermId;
+	public void setAlarmId(String alarmId) {
+		this.alarmId = alarmId;
 	}
 	
 	/**
