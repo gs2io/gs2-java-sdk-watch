@@ -2,6 +2,8 @@ package io.gs2.watch.control;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import io.gs2.watch.model.AlarmEvent;
 
 /**
@@ -10,6 +12,7 @@ import io.gs2.watch.model.AlarmEvent;
  * @author Game Server Services, Inc.
  *
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class DescribeAlarmEventResult {
 
 	/** イベント一覧 */

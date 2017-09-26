@@ -1,5 +1,7 @@
 package io.gs2.watch.control;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import io.gs2.watch.model.Alarm;
 
 /**
@@ -8,6 +10,7 @@ import io.gs2.watch.model.Alarm;
  * @author Game Server Services, Inc.
  *
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class CreateAlarmResult {
 	
 	Alarm item;
